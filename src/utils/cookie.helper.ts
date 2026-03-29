@@ -1,0 +1,32 @@
+export class CookieHelper {
+
+    static async SetCookie(name: string, value: any) {
+        try {
+            const targetName = name
+            const modifiedValue = JSON.stringify(value)
+            const expiry = 1000 * 5
+            const partition = true
+            await cookieStore.set({
+                name: targetName,
+                value: modifiedValue,
+                expires: expiry,
+                partitioned: partition
+            })
+        }
+        catch (error) {
+            console.error(`Error setting cookie : ${error}`)
+        }
+        console.info(`Cookie ${name} has been added successfully.`)
+    }
+
+    static async GetCookies(name: string) {
+        try {
+            return await cookieStore.get(name)
+        }
+        catch (error) {
+            console.error(`Error setting cookie : ${error}`)
+        }
+        console.info(`Cookie ${name} has been readed successfully.`)
+    }
+
+}

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" width="250" height="250">
+  <defs>
+    <!-- Dark purple accent for the icon -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+
+    <!-- Glow filter for the icon -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ring (neural node feel) -->
+  <circle cx="125" cy="125" r="85" fill="none" stroke="url(#accentGrad)" stroke-width="4" opacity="0.45"/>
+  <circle cx="125" cy="125" r="58" fill="none" stroke="url(#accentGrad)" stroke-width="3.5" opacity="0.3"/>
+
+  <!-- Crosshair lines inside the node -->
+  <line x1="125" y1="52" x2="125" y2="98" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)" opacity="0.8"/>
+  <line x1="125" y1="152" x2="125" y2="198" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)" opacity="0.8"/>
+  
+  <!-- Blinking I-beam cursor bar (rectangular shape around the dot) -->
+  <rect x="100" y="100" width="50" height="50" rx="6" fill="none" stroke="url(#accentGrad)" stroke-width="4" filter="url(#glow)"/>
+  
+  <!-- Inner dot -->
+  <circle cx="125" cy="125" r="12" fill="url(#accentGrad)" filter="url(#glow)"/>
+
+  <!-- Radiating signal dots (axon pulses) - dark purple -->
+  <circle cx="40" cy="125" r="5" fill="#a855f7" opacity="0.6"/>
+  <circle cx="25" cy="125" r="3.5" fill="#a855f7" opacity="0.35"/>
+  <circle cx="210" cy="125" r="5" fill="#7c3aed" opacity="0.6"/>
+  <circle cx="225" cy="125" r="3.5" fill="#7c3aed" opacity="0.35"/>
+</svg>

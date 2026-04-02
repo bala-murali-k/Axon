@@ -1,10 +1,10 @@
 export class CookieHelper {
 
-    static async SetCookie(name: string, value: any) {
+    static async SetCookie(name: string, value: any, expireTime?: number) {
         try {
             const targetName = name
             const modifiedValue = JSON.stringify(value)
-            const expiry = 1000 * 5
+            const expiry = expireTime ? expireTime : 1000 * 5
             const partition = true
             await cookieStore.set({
                 name: targetName,

@@ -1,0 +1,84 @@
+<svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" width="320" height="100">
+  <defs>
+    <!-- Deep ink gradient for text -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f14"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+
+    <!-- Electric accent for the cursor/icon -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3af0c8"/>
+      <stop offset="100%" style="stop-color:#1ab8ff"/>
+    </linearGradient>
+
+    <!-- Glow filter for the icon -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle drop shadow for text -->
+    <filter id="textShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#3af0c8" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background pill -->
+  <rect x="0" y="0" width="320" height="100" rx="16" ry="16" fill="#0c0c14"/>
+
+  <!-- Subtle grid texture lines (editorial feel) -->
+  <line x1="0" y1="50" x2="320" y2="50" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="160" y1="0" x2="160" y2="100" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+
+  <!-- ── ICON MARK ── -->
+  <!-- A stylized text cursor / signal pulse node -->
+  <!-- Outer ring (neural node feel) -->
+  <circle cx="38" cy="50" r="22" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.35"/>
+  <circle cx="38" cy="50" r="15" fill="none" stroke="url(#accentGrad)" stroke-width="1" opacity="0.2"/>
+
+  <!-- Crosshair lines inside the node -->
+  <line x1="38" y1="32" x2="38" y2="44" stroke="url(#accentGrad)" stroke-width="1.5" stroke-linecap="round" filter="url(#glow)" opacity="0.7"/>
+  <line x1="38" y1="56" x2="38" y2="68" stroke="url(#accentGrad)" stroke-width="1.5" stroke-linecap="round" filter="url(#glow)" opacity="0.7"/>
+  <!-- Blinking I-beam cursor bar -->
+  <rect x="31" y="43" width="14" height="14" rx="1.5" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" filter="url(#glow)"/>
+  <!-- Inner dot -->
+  <circle cx="38" cy="50" r="2.5" fill="url(#accentGrad)" filter="url(#glow)"/>
+
+  <!-- Radiating signal dots (axon pulses) -->
+  <circle cx="16" cy="50" r="1.5" fill="#3af0c8" opacity="0.5"/>
+  <circle cx="10" cy="50" r="1" fill="#3af0c8" opacity="0.25"/>
+  <circle cx="60" cy="50" r="1.5" fill="#1ab8ff" opacity="0.5"/>
+  <circle cx="66" cy="50" r="1" fill="#1ab8ff" opacity="0.25"/>
+
+  <!-- ── WORDMARK ── -->
+  <!-- Using a geometric, editorial sans letterform via text -->
+  <text
+    x="88"
+    y="65"
+    font-family="'Courier New', 'SF Mono', monospace"
+    font-size="42"
+    font-weight="700"
+    letter-spacing="-1"
+    fill="#f0f0f5"
+    filter="url(#textShadow)"
+  >axon</text>
+
+  <!-- Accent underline beneath "axon" — teal, partial -->
+  <rect x="88" y="72" width="52" height="2.5" rx="1.5" fill="url(#accentGrad)" opacity="0.75"/>
+
+  <!-- Tagline -->
+  <text
+    x="88"
+    y="87"
+    font-family="'Courier New', 'SF Mono', monospace"
+    font-size="10"
+    font-weight="400"
+    letter-spacing="3"
+    fill="#3af0c8"
+    opacity="0.55"
+  >WEB TEXT EDITOR</text>
+</svg>

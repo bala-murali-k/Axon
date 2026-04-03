@@ -4,7 +4,8 @@ export class CookieHelper {
         try {
             const targetName = name
             const modifiedValue = JSON.stringify(value)
-            const expiry = expireTime ? expireTime : 1000 * 5
+            const duration = expireTime ? expireTime : 1000 * 5
+            const expiry = Date?.now() + duration
           console.log('expiry ', expiry);
             await cookieStore.set({
                 name: targetName,

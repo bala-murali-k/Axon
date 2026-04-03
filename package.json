@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "tsc -b && bunx --bun vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "bunx --bun vite preview",
+    "start": "bunx --bun vite preview --port $PORT --host 0.0.0.0",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",

@@ -10,7 +10,8 @@ export class AuthHelper {
     auth = import.meta.env.VITE_AUTHKEY
 
     async CheckUserLoggedIn() {
-        const status = await CookieHelper.GetCookies('IsLoggedIn')
+        const status = await CookieHelper.GetCookies('isLoggedIn')
+          console.log('loggedin ', status);
         return status !== null
     }
 
@@ -28,7 +29,7 @@ export class AuthHelper {
     }
 
     ValidateAuthKey() {
-        CookieHelper?.GetCookies('isLoggedIn')?.then(cookie => {
+        return CookieHelper?.GetCookies('isLoggedIn')?.then(cookie => {
             if (cookie) {
                 CookieHelper?.GetCookies('AuthKey')?.then(authKey => {
                     if (authKey === this.auth) {

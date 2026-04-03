@@ -5,18 +5,17 @@ export class CookieHelper {
             const targetName = name
             const modifiedValue = JSON.stringify(value)
             const expiry = expireTime ? expireTime : 1000 * 5
-            const partition = true
+          console.log('expiry ', expiry);
             await cookieStore.set({
                 name: targetName,
                 value: modifiedValue,
                 expires: expiry,
-                partitioned: partition
             })
+            console.info(`Cookie ${name} has been added successfully.`)
         }
         catch (error) {
             console.error(`Error setting cookie : ${error}`)
         }
-        console.info(`Cookie ${name} has been added successfully.`)
     }
 
     static async GetCookies(name: string) {

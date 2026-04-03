@@ -1,5 +1,6 @@
 // Necessary imports
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // Helper imports
 import { AuthHelper } from '../../utils/auth.helper'
@@ -8,6 +9,11 @@ import { AuthHelper } from '../../utils/auth.helper'
 const auth = new AuthHelper()
 
 export function CoreLoginPage() {
+
+    // Necessary variables
+    const navigate = useNavigate()
+
+    // State variables
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
@@ -32,8 +38,10 @@ export function CoreLoginPage() {
             return
         }
         if (rememberMe) {
-            AuthHelper?.StoreLoginInfo()
+            auth?.StoreLoginInfo()
         }
+        console.log('completed')
+        navigate('/')
     }
 
     return (
